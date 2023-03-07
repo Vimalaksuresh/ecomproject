@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} order Dettail {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Search Results for <span class="text-info"> "{{request.GET.keyword}}"</span></h3>
+            <hr>
+            {% for result in results %}
+            <div class="row">
+                <div col-md-4>
+                    <img src="{{result.image.url}}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-8">
+                    <h4>{{result.title}}</h4>
+                    <p>{{result.description}}</p>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
